@@ -3,7 +3,7 @@
 # MODEL TUNING
 # ------------------------------------------------------------------------------------------
 
-tune <- function(dta, response, method, test.size = 0.75, scale = FALSE, featureSelect = NULL, parallel = TRUE, cores = 4, defaults.only = F) {
+tune <- function(dta, response, method, train.size = 0.75, scale = FALSE, featureSelect = NULL, parallel = TRUE, cores = 4, defaults.only = F) {
   
   # STEP 1: LOAD DATA AND DEPENDENCIES ----
   
@@ -16,7 +16,7 @@ tune <- function(dta, response, method, test.size = 0.75, scale = FALSE, feature
   
   source("method_lib.R")
   
-  sample <- sample(1:nrow(dta), ceiling(nrow(dta)*test.size))
+  sample <- sample(1:nrow(dta), ceiling(nrow(dta)*train.size))
   dta.train <- dta[sample,]
   dta.test <- dta[-sample,]
   
