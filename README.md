@@ -10,6 +10,8 @@ nids <- read.csv("./Data/NIDS_factors.csv")
 model <- tune(dta = nids, response = "income", method = "ctree", defaults.only = F)
 ```
 
+Currently, the function outputs a list of 6 objects: final model, best tune params, train and test RMSE, tuning time, training time.
+
 The function loads the file "method_lib.R". This file needs to be updated to include all methods.
 
 Use the following code to view available tuning parameters to be added to method_lib:
